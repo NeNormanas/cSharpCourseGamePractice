@@ -31,5 +31,10 @@ namespace ConsoleGame.Game
         {
             Console.WriteLine($" Enemy {_name} is at {_x}x{_y}");
         }
+
+        public int GetId()
+        {
+            return _id;
+        }
     }
 }
