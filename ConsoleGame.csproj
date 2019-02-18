@@ -42,6 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gui\Button.cs" />
+    <Compile Include="Gui\CreditWindow.cs" />
+    <Compile Include="Gui\Frame.cs" />
+    <Compile Include="Gui\GameWindow.cs" />
+    <Compile Include="Gui\GuiObject.cs" />
+    <Compile Include="Gui\TextBlock.cs" />
+    <Compile Include="Gui\TextLine.cs" />
+    <Compile Include="Gui\Window.cs" />
     <Compile Include="Units\Enemy.cs" />
     <Compile Include="Game\GameController.cs" />
     <Compile Include="Game\GameScreen.cs" />

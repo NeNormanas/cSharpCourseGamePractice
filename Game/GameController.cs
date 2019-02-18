@@ -7,11 +7,13 @@ using ConsoleGame.Units;
 
 namespace ConsoleGame.Game
 {
-    class GameController {
+    class GameController
+    {
 
         private GameScreen myGame;
 
-        public void StartGame() {
+        public void StartGame()
+        {
 
             // init game
             InitGame();
@@ -20,7 +22,8 @@ namespace ConsoleGame.Game
             StartGameLoop();
         }
 
-        private void InitGame() {
+        private void InitGame()
+        {
             myGame = new GameScreen(30, 20);
 
             // fill game with game data.
