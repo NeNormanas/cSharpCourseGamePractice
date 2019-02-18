@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleGame.Game
+namespace ConsoleGame.Units
 {
     class Hero : Unit
     {
@@ -20,6 +20,10 @@ namespace ConsoleGame.Game
         public void MoveLeft()
         {
             X--;
+        }
+
+        public int GetX() {
+            return X;
         }
     }
 }

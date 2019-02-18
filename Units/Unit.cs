@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleGame.Game
+namespace ConsoleGame.Units
 {
     class Unit
     {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleGame.Units;
 
 namespace ConsoleGame.Game
 {
@@ -28,12 +29,18 @@ namespace ConsoleGame.Game
 
         public void MoveHeroLeft()
         {
-            _hero.MoveLeft();
+            if (_hero.GetX() > 0)
+            {
+                _hero.MoveLeft();
+            }
         }
 
         public void MoveHeroRight()
         {
-            _hero.MoveRight();
+            if (_hero.GetX() < _width)
+            {
+                _hero.MoveRight();
+            }
         }
 
         public void AddEnemy(Enemy enemy)
