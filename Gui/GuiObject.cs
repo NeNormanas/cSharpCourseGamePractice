@@ -8,10 +8,10 @@ namespace ConsoleGame.Gui
 {
     abstract class GuiObject
     {
-        protected int X;
-        protected int Y;
-        protected int Width;
-        protected int Height;
+        public int X { get; set; }
+        public int Y { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
 
         public GuiObject(int x, int y, int width, int height)
         {
