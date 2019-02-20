@@ -15,7 +15,7 @@ namespace ConsoleGame.Gui
             _renderChar = renderChar;
         }
 
-        public void Render()
+        public override void Render()
         {
             for (int i = 0; i < Height; i++)
             {

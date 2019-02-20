@@ -15,7 +15,7 @@ namespace ConsoleGame.Gui
             _data = data;
         }
 
-        public void Render()
+        public override void Render()
         {
             Console.SetCursorPosition(X, Y);
             if (Width > _data.Length)

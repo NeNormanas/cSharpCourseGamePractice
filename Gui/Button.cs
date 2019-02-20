@@ -22,7 +22,7 @@ namespace ConsoleGame.Gui
             _textLine = new TextLine(x + 1, y + 1 + ((height - 2) / 2), width - 2, buttonText);
         }
 
-        public void Render()
+        public override void Render()
         {
             if (_isActive)
             {

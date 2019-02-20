@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame.Gui
 {
-    class GuiObject
+    abstract class GuiObject
     {
         protected int X;
         protected int Y;
@@ -20,5 +20,7 @@ namespace ConsoleGame.Gui
             Width = width;
             Height = height;
         }
+
+        abstract public void Render();
     }
 }

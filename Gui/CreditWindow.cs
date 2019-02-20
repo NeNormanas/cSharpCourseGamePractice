@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame.Gui
 {
-    class CreditWindow : Window
+    sealed class CreditWindow : Window
     {
         private Button _backButton;
 
@@ -37,7 +37,7 @@ namespace ConsoleGame.Gui
             _backButton.SetActive();
         }
 
-        public void Render()
+        public override void Render()
         {
             base.Render();
             _creditTextBlock.Render();

@@ -18,7 +18,7 @@ namespace ConsoleGame.Gui
             }
         }
 
-        public void Render()
+        public override void Render()
         {
             for (int i = 0; i < _textBlocks.Count; i++)
             {

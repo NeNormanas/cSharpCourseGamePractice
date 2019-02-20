@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame.Gui
 {
-    class GameWindow : Window
+    sealed class GameWindow : Window
     {
         private Button _startButton;
         private Button _creditsButton;
@@ -26,7 +26,7 @@ namespace ConsoleGame.Gui
             _quitButton = new Button(80, 13, 18, 5, "Quit");
         }
 
-        public void Render()
+        public override void Render()
         {
             base.Render();
 
