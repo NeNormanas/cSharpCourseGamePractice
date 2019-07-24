@@ -1,87 +1,92 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using ConsoleGame.Units;
 
-namespace ConsoleGame.Game
+namespace GameWithClass.Game
 {
     class GameScreen
     {
-        private int _width;
-        private int _height;
+        private int width;
+        private int hight;
 
-        private Hero _hero;
-        private List<Enemy> _enemies = new List<Enemy>();
+        private Hero hero; // galim heroju suskurti ir per konstruktoriu arba is kart kaip kintamaji padaryti kartu su plociais auksciais
 
-        public GameScreen(int width, int height)
+        private List<Enemy> enemies = new List<Enemy>();
+
+
+
+
+        public GameScreen(int width, int hight)
         {
-            _width = width;
-            _height = height;
+            this.width = width;
+            this.hight = hight;
+
         }
 
         public void SetHero(Hero hero)
         {
-            this._hero = hero;
-        }
+           
+                this.hero = hero;
+                        
 
-
-        public void MoveHeroLeft()
-        {
-            if (_hero.GetX() > 0)
-            {
-                _hero.MoveLeft();
-            }
-        }
-
-        public void MoveHeroRight()
-        {
-            if (_hero.GetX() < _width)
-            {
-                _hero.MoveRight();
-            }
         }
 
         public void AddEnemy(Enemy enemy)
         {
-            _enemies.Add(enemy);
+            enemies.Add(enemy);
         }
+
+        public void MoveHeroRight()
+        {
+            if (hero.GetX() < width)
+            {
+                hero.MoveRight();
+            }
+            
+        }
+
+        public void MoveHeroLeft()
+        {
+            if (hero.GetX() > 0)
+            {
+                hero.MoveLeft();
+            }
+            
+        }
+
+
 
         public void MoveAllEnemiesDown()
         {
-            foreach (Enemy enemy in _enemies)
+            foreach (Enemy enemy in enemies)
             {
                 enemy.MoveDown();
+
             }
+
         }
 
         public Enemy GetEnemyById(int id)
         {
-            foreach (Enemy enemy in _enemies)
+            foreach (var enemy in enemies)
             {
                 if (enemy.GetId() == id)
                 {
                     return enemy;
                 }
             }
+            return null; // neegsituojanti vieta, naudojam prie objektu
 
-            return null;
         }
 
         public void Render()
         {
-            _hero.PrintInfo();
-            foreach (Enemy enemy in _enemies)
+            hero.PrintInfo();
+            foreach (Enemy enemy in enemies)
             {
                 enemy.PrintInfo();
             }
         }
-
-
-
-
-
 
     }
 }

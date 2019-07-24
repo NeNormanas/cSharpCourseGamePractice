@@ -1,30 +1,28 @@
+﻿using GameWithClass.GUI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ConsoleGame.Game;
-using ConsoleGame.Gui;
 
-namespace ConsoleGame
+namespace GameWithClass.Game
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
 
             Console.CursorVisible = false;
 
             GameWindow gameWindow = new GameWindow();
-            gameWindow.Render();
 
             CreditWindow creditWindow = new CreditWindow();
-            creditWindow.Render();
 
-            Console.ReadKey();
+            GuiController guiController = new GuiController(gameWindow, creditWindow);
 
-            //GameController myGame = new GameController();
-            //myGame.StartGame();
+            guiController.ShowMenu();
+            guiController.UserActivity();
+
+
+            Console.WriteLine("PROGRAMA BAIGTA");
+
+
         }
     }
 }

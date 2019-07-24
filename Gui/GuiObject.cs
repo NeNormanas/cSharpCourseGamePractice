@@ -1,26 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ConsoleGame.Gui
+namespace GameWithClass.GUI
 {
     abstract class GuiObject
     {
         public int X { get; set; }
         public int Y { get; set; }
-        public int Width { get; set; }
         public int Height { get; set; }
+        public int Width { get; set; }
+
 
         public GuiObject(int x, int y, int width, int height)
         {
-            X = x;
-            Y = y;
-            Width = width;
-            Height = height;
+            this.X = x;
+            this.Y = y;
+            this.Height = height;
+            this.Width = width;
+
         }
 
         abstract public void Render();
+
+
     }
 }

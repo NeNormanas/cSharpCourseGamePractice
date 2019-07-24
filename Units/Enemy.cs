@@ -1,28 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ConsoleGame.Units
+namespace GameWithClass.Game
 {
     class Enemy : Unit
     {
-        private int _id;
+        private int id;
+       
 
-        public Enemy(int id, int x, int y, string name) : base(x, y, name)
+        public Enemy(int x, int y, string name, int id) : base(x, y, name)
         {
-            this._id = id;
+            this.id = id;
+            
+
         }
 
         public void MoveDown()
         {
-            Y++;
+            Y--;
         }
+
+        
 
         public int GetId()
         {
-            return _id;
+            return id;
         }
+
     }
 }

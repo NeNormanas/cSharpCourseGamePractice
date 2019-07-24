@@ -1,42 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ConsoleGame.Gui
+namespace GameWithClass.GUI
 {
     sealed class GameWindow : Window
     {
-        private Button _startButton;
-        private Button _creditsButton;
-        private Button _quitButton;
-        private TextBlock _titleTextBlock;
+        private TextBlock titleTextBlock;
+        public Button startButton { get; set; }
+        public Button creditsButton { get; set; }
+        private Button quitButton;
+        public List<Button> Mygtukai = new List<Button>();
 
 
-        public GameWindow() : base(0, 0, 120, 30, '%')
+        public GameWindow() : base(0,0,120,30,'%')
         {
-            _titleTextBlock = new TextBlock(10, 5, 100, new List<String> {"Super duper zaidimas", "Vardas Pavardaitis kuryba!", "Made in Vilnius Coding School!"});
+            titleTextBlock = new TextBlock(10, 5, 100, new List<string> { "Super duper zaidimas", "Normanas Necionis kuryba", "Made in Vilnius Coding School!" });
+            startButton = new Button(20, 13, 18, 5, "Start");
+            startButton.SetActive();
 
-            _startButton = new Button(20, 13, 18, 5, "Start");
-            _startButton.SetActive();
+            creditsButton = new Button(50, 13, 18, 5, "Credits");
+            quitButton = new Button(80, 13, 18, 5, "Quit");
 
-            _creditsButton = new Button(50, 13, 18, 5, "Credits");
+            Mygtukai.Add(startButton);
+            Mygtukai.Add(creditsButton);
+            Mygtukai.Add(quitButton);
 
-            _quitButton = new Button(80, 13, 18, 5, "Quit");
         }
 
-        public override void Render()
+        
+
+
+
+        public override void Render() 
         {
             base.Render();
 
-            _titleTextBlock.Render();
-
-            _startButton.Render();
-            _creditsButton.Render();
-            _quitButton.Render();
+            titleTextBlock.Render();
+            startButton.Render();
+            creditsButton.Render();
+            quitButton.Render();
 
             Console.SetCursorPosition(0, 0);
+
         }
     }
 }

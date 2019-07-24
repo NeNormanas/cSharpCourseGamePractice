@@ -1,26 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ConsoleGame.Gui
+namespace GameWithClass.GUI
 {
     class TextLine : GuiObject
     {
-        private string _label;
+        private string label;
 
-        public TextLine(int x, int y, int width, string label) : base(x, y, width, 0)
+        public TextLine(int x, int y, int width, string data) : base(x, y, width, 0)
         {
-            Label = label;
+            this.label = data;
+
         }
 
-        public string Label {
-            get {
-                return _label;
+        public string Label
+        {
+            get
+            {
+                return label;
             }
-            set {
-                _label = value;
+            set
+            {
+                label = value;
                 Render();
             }
         }
@@ -39,5 +41,9 @@ namespace ConsoleGame.Gui
 
             Console.Write(Label);
         }
+
+
+
+
     }
 }

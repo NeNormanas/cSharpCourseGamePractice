@@ -1,28 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ConsoleGame.Gui
+namespace GameWithClass.GUI
 {
     class Window : GuiObject
     {
-        private Frame _border;
+        private Frame border;
 
-        public Window(int x, int y, int width, int height, char borderChar) : base(x, y, width, height)
+        public Window(int x, int y, int width, int height, char symbol) : base(x,y,width,height)
         {
             X = x;
             Y = y;
             Width = width;
             Height = height;
 
-            _border = new Frame(x, y, width, height, borderChar);
+            border = new Frame(x, y, width, height, symbol);
+
+            
         }
 
         public override void Render()
         {
-            _border.Render();
+            border.Render();
         }
+
+
+
     }
 }

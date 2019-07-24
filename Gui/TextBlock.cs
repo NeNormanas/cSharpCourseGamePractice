@@ -1,29 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ConsoleGame.Gui
+namespace GameWithClass.GUI
 {
     sealed class TextBlock : GuiObject
     {
-        private List<TextLine> _textBlocks = new List<TextLine>();
+        private List<TextLine> textBlocks = new List<TextLine>();
 
-        public TextBlock(int x, int y, int width, List<string> textList) : base(x, y, width, 0)
+        public TextBlock(int x, int y, int width, List<string> text) : base(x,y,width,0)
         {
-            for (int i = 0; i < textList.Count; i++)
+            for (int i = 0; i < text.Count; i++)
             {
-                _textBlocks.Add(new TextLine(x, y + i, width, textList[i]));
+                textBlocks.Add(new TextLine(x, y + i, width, text[i]));
             }
+
         }
 
         public override void Render()
         {
-            for (int i = 0; i < _textBlocks.Count; i++)
+            for (int i = 0; i < textBlocks.Count; i++)
             {
-                _textBlocks[i].Render();
+                textBlocks[i].Render();
             }
         }
+
+
+
     }
 }
